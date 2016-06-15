@@ -9,19 +9,19 @@
 /* Begin PBXBuildFile section */
 		301D1A2A1D11D89700B3766C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301D1A291D11D89700B3766C /* AppDelegate.swift */; };
 		301D1A2C1D11D89700B3766C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301D1A2B1D11D89700B3766C /* ViewController.swift */; };
-		301D1A2F1D11D89700B3766C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301D1A2D1D11D89700B3766C /* Main.storyboard */; };
-		301D1A311D11D89700B3766C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301D1A301D11D89700B3766C /* Assets.xcassets */; };
-		301D1A341D11D89700B3766C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301D1A321D11D89700B3766C /* LaunchScreen.storyboard */; };
+		301D1A4C1D11DBFD00B3766C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301D1A461D11DBFD00B3766C /* Assets.xcassets */; };
+		301D1A4D1D11DBFD00B3766C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301D1A481D11DBFD00B3766C /* LaunchScreen.storyboard */; };
+		301D1A4E1D11DBFD00B3766C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301D1A4A1D11DBFD00B3766C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		301D1A261D11D89700B3766C /* GitUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		301D1A291D11D89700B3766C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		301D1A291D11D89700B3766C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		301D1A2B1D11D89700B3766C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		301D1A2E1D11D89700B3766C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		301D1A301D11D89700B3766C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		301D1A331D11D89700B3766C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		301D1A351D11D89700B3766C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		301D1A351D11D89700B3766C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		301D1A461D11DBFD00B3766C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		301D1A491D11DBFD00B3766C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		301D1A4B1D11DBFD00B3766C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,110 @@
 		301D1A281D11D89700B3766C /* GitUsers */ = {
 			isa = PBXGroup;
 			children = (
-				301D1A291D11D89700B3766C /* AppDelegate.swift */,
+				301D1A3B1D11DBB000B3766C /* GitUsers */,
+				301D1A3C1D11DBB000B3766C /* Resources */,
+				301D1A3D1D11DBB000B3766C /* Source */,
 				301D1A2B1D11D89700B3766C /* ViewController.swift */,
-				301D1A2D1D11D89700B3766C /* Main.storyboard */,
-				301D1A301D11D89700B3766C /* Assets.xcassets */,
-				301D1A321D11D89700B3766C /* LaunchScreen.storyboard */,
-				301D1A351D11D89700B3766C /* Info.plist */,
 			);
 			path = GitUsers;
+			sourceTree = "<group>";
+		};
+		301D1A3B1D11DBB000B3766C /* GitUsers */ = {
+			isa = PBXGroup;
+			children = (
+				301D1A351D11D89700B3766C /* Info.plist */,
+				301D1A291D11D89700B3766C /* AppDelegate.swift */,
+			);
+			path = GitUsers;
+			sourceTree = "<group>";
+		};
+		301D1A3C1D11DBB000B3766C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				301D1A461D11DBFD00B3766C /* Assets.xcassets */,
+				301D1A471D11DBFD00B3766C /* Base.lproj */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		301D1A3D1D11DBB000B3766C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				301D1A3E1D11DBB000B3766C /* Contexts */,
+				301D1A3F1D11DBB000B3766C /* Library */,
+				301D1A431D11DBB000B3766C /* Models */,
+				301D1A441D11DBB000B3766C /* UI */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		301D1A3E1D11DBB000B3766C /* Contexts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contexts;
+			sourceTree = "<group>";
+		};
+		301D1A3F1D11DBB000B3766C /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				301D1A401D11DBB000B3766C /* Categories */,
+				301D1A411D11DBB000B3766C /* Classes */,
+				301D1A421D11DBB000B3766C /* Constants */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		301D1A401D11DBB000B3766C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		301D1A411D11DBB000B3766C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		301D1A421D11DBB000B3766C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		301D1A431D11DBB000B3766C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		301D1A441D11DBB000B3766C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				301D1A451D11DBB000B3766C /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		301D1A451D11DBB000B3766C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		301D1A471D11DBFD00B3766C /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				301D1A481D11DBFD00B3766C /* LaunchScreen.storyboard */,
+				301D1A4A1D11DBFD00B3766C /* Main.storyboard */,
+			);
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +218,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				301D1A341D11D89700B3766C /* LaunchScreen.storyboard in Resources */,
-				301D1A311D11D89700B3766C /* Assets.xcassets in Resources */,
-				301D1A2F1D11D89700B3766C /* Main.storyboard in Resources */,
+				301D1A4E1D11DBFD00B3766C /* Main.storyboard in Resources */,
+				301D1A4C1D11DBFD00B3766C /* Assets.xcassets in Resources */,
+				301D1A4D1D11DBFD00B3766C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,20 +239,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		301D1A2D1D11D89700B3766C /* Main.storyboard */ = {
+		301D1A481D11DBFD00B3766C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				301D1A2E1D11D89700B3766C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		301D1A321D11D89700B3766C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				301D1A331D11D89700B3766C /* Base */,
+				301D1A491D11DBFD00B3766C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		301D1A4A1D11DBFD00B3766C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				301D1A4B1D11DBFD00B3766C /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -288,6 +384,7 @@
 				301D1A3A1D11D89700B3766C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
