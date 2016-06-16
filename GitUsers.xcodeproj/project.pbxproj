@@ -17,6 +17,7 @@
 		301D1A581D1317BA00B3766C /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301D1A571D1317BA00B3766C /* UsersViewController.swift */; };
 		301D1A5B1D1317D400B3766C /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301D1A591D1317D400B3766C /* AvatarViewController.swift */; };
 		301D1A5F1D131FAD00B3766C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301D1A5E1D131FAD00B3766C /* UserCell.swift */; };
+		301D1A611D13225B00B3766C /* GetUsersContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301D1A601D13225B00B3766C /* GetUsersContext.swift */; };
 		D56C03A61D7A70E98D0BBD96 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DBCFEC52A8EFB5C6B97ED70 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		301D1A571D1317BA00B3766C /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		301D1A591D1317D400B3766C /* AvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
 		301D1A5E1D131FAD00B3766C /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		301D1A601D13225B00B3766C /* GetUsersContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersContext.swift; sourceTree = "<group>"; };
 		3F6C87385C8C7F943D8663C6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7DBCFEC52A8EFB5C6B97ED70 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D3B000D25BC5A7E8D26382 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		301D1A3E1D11DBB000B3766C /* Contexts */ = {
 			isa = PBXGroup;
 			children = (
+				301D1A601D13225B00B3766C /* GetUsersContext.swift */,
 			);
 			path = Contexts;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				301D1A2A1D11D89700B3766C /* AppDelegate.swift in Sources */,
 				301D1A5B1D1317D400B3766C /* AvatarViewController.swift in Sources */,
 				301D1A5F1D131FAD00B3766C /* UserCell.swift in Sources */,
+				301D1A611D13225B00B3766C /* GetUsersContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

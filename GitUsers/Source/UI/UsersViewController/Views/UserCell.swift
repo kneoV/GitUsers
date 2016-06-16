@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class UserCell: UITableViewCell {
 
@@ -31,6 +32,10 @@ class UserCell: UITableViewCell {
         idLabel.text = String(model.userID)
         loginLabel.text = model.login
         linkLabel.text = model.profileLink
+        
+        if let URL = NSURL(string: model.avatarLink) {
+            avatarImageView.af_setImageWithURL(URL)
+        }
     }
     
     override func prepareForReuse() {
