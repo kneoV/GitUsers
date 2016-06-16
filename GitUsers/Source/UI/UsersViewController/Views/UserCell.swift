@@ -16,6 +16,9 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var linkLabel: UILabel!
     
+    var tapAvatarCompletion: ((cell: UserCell) -> ())?
+    var model: UserModel?
+    
     // MARK: - Initialization and Deallocations
     
     override func awakeFromNib() {
@@ -33,6 +36,8 @@ class UserCell: UITableViewCell {
         loginLabel.text = model.login
         linkLabel.text = model.profileLink
         
+        self.model = model
+        
         if let URL = NSURL(string: model.avatarLink) {
             avatarImageView.af_setImageWithURL(URL)
         }
@@ -46,5 +51,11 @@ class UserCell: UITableViewCell {
         linkLabel.text = nil
         
         avatarImageView.image = nil
+    }
+    
+    @IBAction func onTapAvatar(sender: AnyObject) {
+        if let completion = tapAvatarCompletion {
+            completion(cell: self)
+        }
     }
 }

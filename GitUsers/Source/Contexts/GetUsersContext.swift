@@ -13,10 +13,10 @@ import SwiftyJSON
 class GetUsersontext {
     var usersModel: UsersModel?
     
-    func execute(completionHandler: (context: GetUsersontext, success: Bool) -> Void) {
+    func execute(since: Int, completionHandler: (context: GetUsersontext, success: Bool) -> Void) {
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            Alamofire.request(.GET, "https://api.github.com/users", parameters: ["per_page":100])
+            Alamofire.request(.GET, "https://api.github.com/users", parameters: ["per_page":100, "since":since])
                 .responseJSON { response in
                     
                     if let data = response.result.value {

@@ -11,41 +11,79 @@ import UIKit
 class UsersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var coverView: UIView!
     
     var loadContext: GetUsersontext?
-    var model: UsersModel?
+    var model = UsersModel()
+    var isLoading = false
+    var since = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self .loadUsers()
+    }
+
+    func loadUsers()  {
+        if isLoading {
+            return
+        }
+        
+        coverView.hidden = false
+        isLoading = true
+        
         loadContext = GetUsersontext()
         
         if let context = loadContext {
-            context.execute{ (context, success) in
+            context.execute(since) { (context, success) in
                 if success {
-                    self.model = context.usersModel
+                    if let usersModel = context.usersModel {
+                        self.model.addUsers(usersModel.users)
+                        
+                        if let lastUser = self.model.last {
+                            self.since = lastUser.userID
+                        }
+                    }
+                    
                     self.tableView.reloadData()
+                    self.coverView.hidden = true
+                    self.loadContext = nil
+                    self.isLoading = false
                 }
             }
+        } else {
+            coverView.hidden = true
+            isLoading = false
         }
     }
+
 }
 
 // MARK: - UITableViewDataSource Extension
 
 extension UsersViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let model = self.model {
-            return model.count
-        }
-        return 0
+        return model.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UserCell", forIndexPath: indexPath) as! UserCell
+
+        cell.fillWithModel(model[indexPath.row])
+
+        cell.tapAvatarCompletion = { cell in
+            if let viewController: AvatarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AvatarViewController") as? AvatarViewController {
+            
+                if let model = cell.model {
+                    viewController.fillWithModel(model)
+                }
+            
+                self.presentViewController(viewController, animated: true, completion: nil)
+            }
+        }
         
-        if let model = self.model {
-            cell.fillWithModel(model[indexPath.row])
+        if indexPath.row == (model.count - 1) {
+            self.loadUsers()
         }
         
         return cell
