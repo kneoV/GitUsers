@@ -17,7 +17,6 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var linkLabel: UILabel!
     
     var tapAvatarCompletion: ((cell: UserCell) -> ())?
-    var model: UserModel?
     
     // MARK: - Initialization and Deallocations
     
@@ -35,8 +34,6 @@ class UserCell: UITableViewCell {
         idLabel.text = String(model.userID)
         loginLabel.text = model.login
         linkLabel.text = model.profileLink
-        
-        self.model = model
         
         if let URL = NSURL(string: model.avatarLink) {
             avatarImageView.af_setImageWithURL(URL)

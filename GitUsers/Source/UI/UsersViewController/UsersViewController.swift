@@ -13,7 +13,7 @@ class UsersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var coverView: UIView!
     
-    var loadContext: GetUsersontext?
+    var loadContext: GetUsersСontext?
     var model = UsersModel()
     var isLoading = false
     var since = 0
@@ -21,7 +21,7 @@ class UsersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self .loadUsers()
+        self.loadUsers()
     }
 
     func loadUsers()  {
@@ -32,7 +32,7 @@ class UsersViewController: UIViewController {
         coverView.hidden = false
         isLoading = true
         
-        loadContext = GetUsersontext()
+        loadContext = GetUsersСontext()
         
         if let context = loadContext {
             context.execute(since) { (context, success) in
@@ -71,12 +71,11 @@ extension UsersViewController: UITableViewDataSource {
 
         cell.fillWithModel(model[indexPath.row])
 
-        cell.tapAvatarCompletion = { cell in
+        cell.tapAvatarCompletion = {[unowned self] cell in
             if let viewController: AvatarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AvatarViewController") as? AvatarViewController {
             
-                if let model = cell.model {
-                    viewController.fillWithModel(model)
-                }
+                let model = self.model[indexPath.row]
+                viewController.fillWithModel(model)
             
                 self.presentViewController(viewController, animated: true, completion: nil)
             }

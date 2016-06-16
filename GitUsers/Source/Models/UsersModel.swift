@@ -23,7 +23,7 @@ struct UsersModel {
         mutableUsers.appendContentsOf(users)
     }
     
-    mutating func removeCountry(user: UserModel) {
+    mutating func removeUser(user: UserModel) {
         mutableUsers.removeObject(user)
     }
     
