@@ -12,7 +12,23 @@ import GameplayKit
 
 class ViewController: NSViewController {
 
+    // MARK: - Constants
+    
+    let mineSize = 20
+    
+    // MARK: - Property
+    
     @IBOutlet var skView: SKView!
+    
+    var settings = Settings()
+    
+    // MARK: - Life Cycle
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        updateWindowSize(settings: settings)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +40,10 @@ class ViewController: NSViewController {
             // Get the SKScene from the loaded GKScene
             if let sceneNode = scene.rootNode as! GameScene? {
                 
-                // Copy gameplay related content over to the scene
-                sceneNode.entities = scene.entities
-                sceneNode.graphs = scene.graphs
+                sceneNode.settings = settings
                 
                 // Set the scale mode to scale to fit the window
-                sceneNode.scaleMode = .aspectFill
+                sceneNode.scaleMode = .resizeFill
                 
                 // Present the scene
                 if let view = self.skView {
@@ -41,6 +55,29 @@ class ViewController: NSViewController {
                     view.showsNodeCount = true
                 }
             }
+        }
+    }
+    
+    // MARK: - Privat
+    
+    func updateWindowSize(settings: Settings) {
+        let width : CGFloat = CGFloat(mineSize * settings.boardWidth + 20)
+        let height : CGFloat = CGFloat(mineSize * settings.boardHeight + 70)
+        
+        let skView = self.view as! SKView
+        let sizeWindow = NSSize(width: width, height: height)
+        
+        if let window = skView.window {
+            let screenFrame = NSScreen.main()!.frame
+            let x = screenFrame.size.width / 2.0 - width / 2.0
+            let y = screenFrame.size.height / 2.0 - height / 2.0
+            
+            window.setFrame(NSRect(origin: NSPoint(x: x, y: y), size: sizeWindow), display: true)
+            window.minSize = sizeWindow
+            window.maxSize = sizeWindow
+            
+            skView.needsLayout = true
+            skView.scene?.size = sizeWindow
         }
     }
 }
